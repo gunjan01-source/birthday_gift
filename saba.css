@@ -1,0 +1,444 @@
+.bday-icon {
+    width: 150px; 
+    height: 150px;
+}
+
+.bday-icon {
+    width: 100px; 
+    height: 100px;
+    object-fit: contain; 
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px; 
+}
+
+.dot-loader {
+    display: block; 
+    font-size: 3em; 
+    font-weight: bold;
+    color: var(--dark-text, #604060); 
+    margin-top: -10px; 
+    overflow: hidden; 
+    white-space: nowrap;
+    width: 0; 
+    animation: typing-dots 1.5s steps(3) infinite; 
+}
+
+@keyframes typing-dots {
+    0% { width: 0; }
+    100% { width: 1.5em; } 
+}
+
+:root {
+    --pastel-pink: #FFD1DC; 
+    --dark-textbday: #ff7293;
+    --pastel-pink2: #ffd7e1;
+    --pastel-pink3: #ffb6c1;
+}
+
+#loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("download.jpg");
+    background-size: cover;
+    z-index: 9999;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.loader-content {
+    text-align: center; 
+    color: var(--dark-text);
+    font-family: 'Comic Sans MS', cursive; 
+}
+
+.bday-icon {
+    width: 150px; 
+    height: 150px;
+    object-fit: contain; 
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.loading-text {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.dot-loader {
+    display: block;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--dark-text);
+    margin-top: -10px;
+    overflow: hidden; 
+    white-space: nowrap;
+    width: 0; 
+    animation: typing-dots 2.5s steps(5) infinite; 
+}
+
+@keyframes typing-dots {
+    0% { width: 0; }
+    100% { width: 2.5em; } 
+}
+
+.loaded #loading-page {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+body{
+    /* background-image: url("cake_bg.jpg");
+    background-size: cover; */
+    background-color: rgb(255, 250, 229);
+}
+
+h1{
+    font-family: 'Comic Sans MS', cursive;
+    color: var(--dark-textbday);
+    text-align: center;
+    margin: 10vh;
+    font-weight: 700;
+    font-size: 5em;
+    text-shadow: 2px 2px 7px #ffa7d2; 
+    z-index: 7;
+}
+
+h1:hover{
+    color: #ff668a;
+    text-shadow: 2px 2px 7px #ffd7e1;
+    z-index: 10;
+}
+
+.tulip-box{
+    height: 17vh;
+    width: 15vh;
+    background-image: url('tulip-removebg-preview.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    top: -25vh;
+    right: -150vh;
+}
+
+.cake-area {
+    width: 400px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -20vh;
+    /* background-color: lightblue; */
+}
+
+.container-cake{
+    width: 300px;
+    height: 350px;
+    margin-top: 5vh;
+    position: relative; 
+    /* background-color: #c7a82d; */
+    background-image: url('3d_icon__1_-removebg-preview.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.candle-container {
+    position: absolute;
+    top: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    cursor: pointer;
+}
+
+.candle {
+    width: 10px;
+    height: 80px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+    top: -20    px;
+}
+
+.wick {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 10px;
+    background: #333;
+}
+
+.flame {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 20px;
+    background: orange;
+    border-radius: 50% 50% 30% 30%;
+    box-shadow: 0 0 10px 5px yellow, 0 0 20px 10px rgba(255, 165, 0, 0.5);
+    clip-path: polygon(50% 0%, 70% 30%, 50% 100%, 30% 30%);
+    animation: flicker 0.2s ease-in-out infinite alternate;
+    opacity: 0; 
+    transition: opacity 0.3s;
+}
+
+.flame.lit {
+    opacity: 1;
+}
+
+@keyframes flicker {
+    0% { transform: translateX(-50%) scaleY(1); }
+    100% { transform: translateX(-50%) scaleY(1.1); box-shadow: 0 0 12px 6px yellow, 0 0 25px 12px rgba(255, 165, 0, 0.6); }
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    border-radius: 2px;
+    animation: confetti-fall 3s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+    0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+    100% { opacity: 0.8; transform: translateY(100vh) rotate(720deg); }
+}
+
+.instruction-text {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 5vh;
+}
+
+
+.cake-and-doll-wrapper {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end; 
+    padding: 20px;
+}
+
+
+.hi-saying-doll-container {
+    position: relative; 
+    margin-right: 30px; 
+}
+
+.hi-saying-doll {
+    width: 40vh; 
+    height: 40vh; 
+    background-image: url('___𐙚__-removebg-preview.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    cursor: pointer; 
+    position: relative; 
+    top: -35vh;
+}
+
+.speech-bubble {
+    position: absolute;
+    top: -300px; 
+    right: -50px;
+    background-color: rgba(255, 118, 163, 0.88);
+    color: var(--dark-text);
+    border: 2px solid var(--pastel-pink);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 1.1em;
+    font-family: 'Comic Sans MS', cursive;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hi-saying-doll-container:hover .speech-bubble {
+    opacity: 1;
+    visibility: visible;
+}
+
+.allfooter-section {
+    min-height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: none;
+    gap: 30vh;
+    margin-bottom: 10vh;
+}
+
+.cat-link-wrapper {
+    display: block; 
+    text-decoration: none;
+    width: 40vh;
+    height: 40vh;
+}
+
+.cat-letter {
+    width: 40vh;
+    height: 40vh;
+    background-image: url('pixel-removebg-preview.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.beautiful { 
+    height: 40vh;
+    width: 5vh; 
+    background-image: url("download__1_-removebg-preview.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    background: transparent;
+    border-radius: 20vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.beautiful {
+    height: 40vh;
+    width: 1vh; 
+    background-image: url("download__1_-removebg-preview.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; 
+    cursor: pointer;
+}
+
+.beautiful::after {
+    content: "My beautiful lady";
+    position: absolute;
+    top: -50px;       
+    left: 50%;
+    transform: translateX(-50%) scale(0); 
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 50px; 
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease-in-out; 
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.beautiful::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 60%;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.beautiful:hover::after, 
+.beautiful:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) scale(1); 
+}
+
+.beautiful:hover::before {
+    transform: scale(1); 
+}
+.beautiful {
+    height: 40vh;
+    width: 40vh; 
+    background-image: url("download__1_-removebg-preview.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative; 
+    cursor: pointer;
+}
+
+.beautiful::after {
+    content: "My beautiful lady";
+    position: absolute;
+    top: -50px;      
+    left: 50%;
+    transform: translateX(-50%) scale(0); 
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 50px; 
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.beautiful::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 60%;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.beautiful:hover::after, 
+.beautiful:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) scale(1); 
+}
+
+.beautiful:hover::before {
+    transform: scale(1); 
+}
+
+.image{
+    width: 40vh;
+    height: 40vh;
+    background-image: url('cam.img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20vh;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
