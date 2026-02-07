@@ -442,3 +442,82 @@ h1:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    /* Fix the Heading */
+    h1 {
+        font-size: 2.5em;
+        margin: 5vh 0;
+        padding: 0 10px;
+    }
+
+    /* Fix the Tulip (it was pushed too far right) */
+    .tulip-box {
+        position: absolute;
+        top: 2vh;
+        right: 5vw;
+        height: 80px;
+        width: 70px;
+    }
+
+    /* Stack the Doll and Cake vertically */
+    .cake-and-doll-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .hi-saying-doll-container {
+        margin-right: 0;
+        order: 2; /* Put doll below the cake on mobile */
+    }
+
+    .hi-saying-doll {
+        width: 25vh;
+        height: 25vh;
+        top: 0; /* Resetting the negative vh */
+    }
+
+    .speech-bubble {
+        top: -40px;
+        right: 0;
+        font-size: 0.9em;
+    }
+
+    /* Fix the Cake Area */
+    .cake-area {
+        width: 100%;
+        height: auto;
+        top: 0; /* Resetting the negative vh */
+        order: 1;
+    }
+
+    .container-cake {
+        width: 200px;
+        height: 230px;
+    }
+
+    .candle {
+        height: 50px;
+    }
+
+    /* Fix the Footer Section (The 3 circles) */
+    .allfooter-section {
+        flex-direction: column; /* Stack them vertically on phones */
+        gap: 40px;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .cat-link-wrapper, .beautiful, .image {
+        width: 25vh;
+        height: 25vh;
+        border-radius: 50%;
+    }
+
+    /* Adjust the text under the cat */
+    .instruction-text {
+        text-align: center;
+        font-size: 0.9rem;
+    }
+}
