@@ -442,61 +442,64 @@ h1:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-/* --- UPDATED MOBILE RESPONSIVE FIX --- */
+/* --- MOBILE FIX: CANDLE & CIRCLE SPACING --- */
 @media (max-width: 768px) {
-    /* Fix the Heading so it shows up at the top */
+    /* 1. Fix Heading Spacing */
     h1 {
-        font-size: 2.2em;
-        margin: 30px 0;
-        padding: 0 15px;
-        line-height: 1.2;
+        font-size: 2em;
+        margin-top: 40px !important;
+        margin-bottom: 10px;
+        width: 100%;
     }
 
-    /* Stack everything vertically with proper spacing */
-    .cake-and-doll-wrapper {
+    /* 2. Fix Cake & Candle Alignment */
+    .cake-area {
+        top: 0 !important;
+        margin: 0 auto;
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
-    }
-
-    /* Shrink the Doll and Cake so they don't take up the whole screen */
-    .hi-saying-doll {
-        width: 150px;
-        height: 150px;
-        top: 0;
     }
 
     .container-cake {
-        width: 150px;
-        height: 180px;
+        width: 180px; /* Slightly smaller to fit better */
+        height: 200px;
+        background-size: contain; /* Ensures cake doesn't cut off */
+        background-repeat: no-repeat;
+        position: relative; /* This is the anchor for the candle */
     }
 
-    /* Fix the Footer Circles (The ones in your screenshot) */
+    .candle-container {
+        top: 25px !important; /* Adjust this number to move candle UP or DOWN on the cake */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .candle {
+        height: 40px; /* Shorter candle looks better on mobile cake */
+    }
+
+    /* 3. Fix Overlapping Circles & Text */
     .allfooter-section {
-        flex-direction: column; 
-        gap: 20px; /* Space between circles */
+        flex-direction: column;
+        gap: 60px; /* Increased gap to prevent circles from touching */
+        margin-top: 30px;
         align-items: center;
-        margin-top: 20px;
-        min-height: auto;
     }
 
-    /* Make circles smaller so they don't overlap */
     .cat-link-wrapper, .beautiful, .image {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
+        width: 120px !important;
+        height: 120px !important;
+        position: relative;
     }
 
-    .cat-letter {
-        width: 140px;
-        height: 140px;
-    }
-
-    /* Fix the overlapping text in the circle */
-    .instruction-text {
-        font-size: 0.8rem;
+    /* Ensures the "Tap on me" text doesn't overlap the next circle */
+    .cat-link-wrapper .instruction-text {
+        position: absolute;
+        bottom: -50px; 
+        width: 150%;
+        left: -25%;
         text-align: center;
-        margin-top: 5px;
-        padding: 0 10px;
+        margin: 0;
     }
 }
