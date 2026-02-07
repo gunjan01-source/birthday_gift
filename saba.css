@@ -521,3 +521,39 @@ h1:hover{
         font-size: 0.9rem;
     }
 }
+
+@media (max-width: 768px) {
+    /* ... (keep your H1 and Doll fixes from before) ... */
+
+    .allfooter-section {
+        display: flex;
+        flex-direction: column; /* This forces them into a vertical line */
+        align-items: center;
+        gap: 80px;             /* Adds clear space between each circle */
+        margin-top: 100px;
+        height: auto;          /* Let the section grow with the content */
+    }
+
+    .cat-link-wrapper, 
+    .beautiful, 
+    .image {
+        width: 180px;          /* Fixed size in pixels is safer for mobile */
+        height: 180px;
+        margin: 0 auto;        /* Centers them */
+    }
+
+    .cat-letter, 
+    .beautiful, 
+    .image {
+        border-radius: 50%;    /* Ensures they stay perfectly round */
+        background-size: cover;
+    }
+
+    /* Adjusting the instructions so they don't overlap */
+    .instruction-text {
+        font-size: 0.9em;
+        text-align: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
