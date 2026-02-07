@@ -442,64 +442,75 @@ h1:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-/* --- MOBILE FIX: CANDLE & CIRCLE SPACING --- */
+/* --- ULTIMATE MOBILE REPAIR --- */
 @media (max-width: 768px) {
-    /* 1. Fix Heading Spacing */
+    /* 1. Reset huge margins and center heading */
     h1 {
-        font-size: 2em;
-        margin-top: 40px !important;
-        margin-bottom: 10px;
+        font-size: 1.8em !important;
+        margin: 40px 0 20px 0 !important;
+        text-align: center;
         width: 100%;
+        position: static !important;
     }
 
-    /* 2. Fix Cake & Candle Alignment */
+    /* 2. Fix Cake and Candle Alignment */
     .cake-area {
+        position: relative !important;
         top: 0 !important;
-        margin: 0 auto;
+        margin: 20px auto !important;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .container-cake {
-        width: 180px; /* Slightly smaller to fit better */
-        height: 200px;
-        background-size: contain; /* Ensures cake doesn't cut off */
-        background-repeat: no-repeat;
-        position: relative; /* This is the anchor for the candle */
+        width: 160px !important;
+        height: 180px !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        position: relative !important;
+        margin: 0 auto;
     }
 
+    /* This 'glues' the candle to the top-center of the cake image */
     .candle-container {
-        top: 25px !important; /* Adjust this number to move candle UP or DOWN on the cake */
-        left: 50%;
-        transform: translateX(-50%);
+        position: absolute !important;
+        top: 10px !important; 
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
 
-    .candle {
-        height: 40px; /* Shorter candle looks better on mobile cake */
-    }
-
-    /* 3. Fix Overlapping Circles & Text */
+    /* 3. Fix the Overlapping Circles Footer */
     .allfooter-section {
-        flex-direction: column;
-        gap: 60px; /* Increased gap to prevent circles from touching */
-        margin-top: 30px;
-        align-items: center;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 80px !important; /* Large gap so they never touch */
+        margin-top: 50px !important;
+        width: 100% !important;
     }
 
     .cat-link-wrapper, .beautiful, .image {
-        width: 120px !important;
-        height: 120px !important;
-        position: relative;
+        width: 150px !important;
+        height: 150px !important;
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
     }
 
-    /* Ensures the "Tap on me" text doesn't overlap the next circle */
-    .cat-link-wrapper .instruction-text {
-        position: absolute;
-        bottom: -50px; 
-        width: 150%;
-        left: -25%;
-        text-align: center;
-        margin: 0;
+    .cat-letter {
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    /* Move text safely below the circle */
+    .instruction-text {
+        position: relative !important;
+        width: 200px !important;
+        text-align: center !important;
+        margin-top: 10px !important;
+        font-size: 0.9rem !important;
     }
 }
