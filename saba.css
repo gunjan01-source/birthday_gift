@@ -1,4 +1,4 @@
-.bday-icon {
+       .bday-icon {
     width: 150px; 
     height: 150px;
 }
@@ -442,118 +442,61 @@ h1:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-/* --- MOBILE RESPONSIVE FIX --- */
+/* --- UPDATED MOBILE RESPONSIVE FIX --- */
 @media (max-width: 768px) {
-    /* Fix the Heading */
+    /* Fix the Heading so it shows up at the top */
     h1 {
-        font-size: 2.5em;
-        margin: 5vh 0;
-        padding: 0 10px;
+        font-size: 2.2em;
+        margin: 30px 0;
+        padding: 0 15px;
+        line-height: 1.2;
     }
 
-    /* Fix the Tulip (it was pushed too far right) */
-    .tulip-box {
-        position: absolute;
-        top: 2vh;
-        right: 5vw;
-        height: 80px;
-        width: 70px;
-    }
-
-    /* Stack the Doll and Cake vertically */
+    /* Stack everything vertically with proper spacing */
     .cake-and-doll-wrapper {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
     }
 
-    .hi-saying-doll-container {
-        margin-right: 0;
-        order: 2; /* Put doll below the cake on mobile */
-    }
-
+    /* Shrink the Doll and Cake so they don't take up the whole screen */
     .hi-saying-doll {
-        width: 25vh;
-        height: 25vh;
-        top: 0; /* Resetting the negative vh */
-    }
-
-    .speech-bubble {
-        top: -40px;
-        right: 0;
-        font-size: 0.9em;
-    }
-
-    /* Fix the Cake Area */
-    .cake-area {
-        width: 100%;
-        height: auto;
-        top: 0; /* Resetting the negative vh */
-        order: 1;
+        width: 150px;
+        height: 150px;
+        top: 0;
     }
 
     .container-cake {
-        width: 200px;
-        height: 230px;
+        width: 150px;
+        height: 180px;
     }
 
-    .candle {
-        height: 50px;
-    }
-
-    /* Fix the Footer Section (The 3 circles) */
+    /* Fix the Footer Circles (The ones in your screenshot) */
     .allfooter-section {
-        flex-direction: column; /* Stack them vertically on phones */
-        gap: 40px;
+        flex-direction: column; 
+        gap: 20px; /* Space between circles */
         align-items: center;
-        margin-top: 50px;
+        margin-top: 20px;
+        min-height: auto;
     }
 
+    /* Make circles smaller so they don't overlap */
     .cat-link-wrapper, .beautiful, .image {
-        width: 25vh;
-        height: 25vh;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
     }
 
-    /* Adjust the text under the cat */
+    .cat-letter {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* Fix the overlapping text in the circle */
     .instruction-text {
+        font-size: 0.8rem;
         text-align: center;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    /* ... (keep your H1 and Doll fixes from before) ... */
-
-    .allfooter-section {
-        display: flex;
-        flex-direction: column; /* This forces them into a vertical line */
-        align-items: center;
-        gap: 80px;             /* Adds clear space between each circle */
-        margin-top: 100px;
-        height: auto;          /* Let the section grow with the content */
-    }
-
-    .cat-link-wrapper, 
-    .beautiful, 
-    .image {
-        width: 180px;          /* Fixed size in pixels is safer for mobile */
-        height: 180px;
-        margin: 0 auto;        /* Centers them */
-    }
-
-    .cat-letter, 
-    .beautiful, 
-    .image {
-        border-radius: 50%;    /* Ensures they stay perfectly round */
-        background-size: cover;
-    }
-
-    /* Adjusting the instructions so they don't overlap */
-    .instruction-text {
-        font-size: 0.9em;
-        text-align: center;
-        width: 100%;
-        margin-top: 10px;
+        margin-top: 5px;
+        padding: 0 10px;
     }
 }
