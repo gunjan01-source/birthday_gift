@@ -459,99 +459,113 @@ body {
     overflow-x: hidden;
 }
 
-/* 2. LOADING PAGE - Centered Perfectly */
+:root {
+    --dark-textbday: #ff7293;
+}
+
+/* 1. LIMIT THE SCREEN & CENTER EVERYTHING */
+body {
+    background-color: rgb(255, 250, 229);
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally centers all content */
+    width: 100%;
+    overflow-x: hidden; /* Prevents side-scrolling */
+}
+
+/* 2. LOADING PAGE FIX */
 #loading-page {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 250, 229); /* Match the body */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 250, 229);
     z-index: 9999;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
 
-.bday-icon {
-    width: 120px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-/* 3. MAIN PAGE CONTENT */
-h1 {
-    color: var(--dark-textbday);
-    font-size: 2em;
-    text-align: center;
-    margin: 40px 10px 20px 10px;
-    width: 90%;
-}
-
-/* 4. CAKE & CANDLE */
-.cake-area {
+.loader-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+}
+
+/* 3. MAIN HEADING */
+h1 {
+    color: var(--dark-textbday);
+    font-size: 2.2em;
+    text-align: center;
+    margin: 40px auto 20px auto;
+    width: 90%;
+}
+
+/* 4. CAKE AREA (Centered) */
+.cake-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
 }
 
 .container-cake {
-    width: 180px; 
-    height: 180px;
+    width: 200px;
+    height: 200px;
     background-image: url('3d_icon__1_-removebg-preview.png');
     background-size: contain;
     background-repeat: no-repeat;
-    position: relative; /* This keeps the candle attached */
+    background-position: center;
+    position: relative;
 }
 
 .candle-container {
     position: absolute;
-    top: -5px; /* Adjust this to move candle up/down */
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.candle {
-    width: 8px;
-    height: 40px;
-    background: #fff;
-    border-radius: 4px;
-}
-
-/* 5. THE THREE CIRCLES (FOOTER) */
+/* 5. FOOTER CIRCLES (Centered and Limited) */
 .allfooter-section {
+    width: 100%;
+    max-width: 400px; /* Limits the "screen" width */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; /* Space between circles */
-    padding-bottom: 50px;
-    width: 100%;
+    gap: 50px; /* Space between circles */
+    padding-bottom: 80px;
 }
 
 .cat-link-wrapper, .beautiful, .image {
-    width: 140px !important;
-    height: 140px !important;
-    text-decoration: none;
+    width: 150px !important;
+    height: 150px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
+    position: relative;
 }
 
 .cat-letter, .image, .beautiful {
-    width: 140px !important;
-    height: 140px !important;
+    width: 150px !important;
+    height: 150px !important;
     border-radius: 50% !important;
     background-size: cover;
     background-position: center;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .instruction-text {
     text-align: center;
-    font-size: 0.85rem;
-    margin-top: 10px;
+    width: 200px;
+    margin-top: 15px;
+    font-size: 0.9rem;
     color: #444;
 }
