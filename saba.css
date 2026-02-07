@@ -442,75 +442,116 @@ h1:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-/* --- ULTIMATE MOBILE REPAIR --- */
-@media (max-width: 768px) {
-    /* 1. Reset huge margins and center heading */
-    h1 {
-        font-size: 1.8em !important;
-        margin: 40px 0 20px 0 !important;
-        text-align: center;
-        width: 100%;
-        position: static !important;
-    }
+/* 1. RESET & BASE */
+:root {
+    --dark-textbday: #ff7293;
+}
 
-    /* 2. Fix Cake and Candle Alignment */
-    .cake-area {
-        position: relative !important;
-        top: 0 !important;
-        margin: 20px auto !important;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+body {
+    background-color: rgb(255, 250, 229);
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* This centers everything horizontally */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-    .container-cake {
-        width: 160px !important;
-        height: 180px !important;
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
-        position: relative !important;
-        margin: 0 auto;
-    }
+/* 2. LOADING PAGE - Centered Perfectly */
+#loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 250, 229); /* Match the body */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-    /* This 'glues' the candle to the top-center of the cake image */
-    .candle-container {
-        position: absolute !important;
-        top: 10px !important; 
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-    }
+.bday-icon {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
 
-    /* 3. Fix the Overlapping Circles Footer */
-    .allfooter-section {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 80px !important; /* Large gap so they never touch */
-        margin-top: 50px !important;
-        width: 100% !important;
-    }
+/* 3. MAIN PAGE CONTENT */
+h1 {
+    color: var(--dark-textbday);
+    font-size: 2em;
+    text-align: center;
+    margin: 40px 10px 20px 10px;
+    width: 90%;
+}
 
-    .cat-link-wrapper, .beautiful, .image {
-        width: 150px !important;
-        height: 150px !important;
-        position: relative !important;
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
-    }
+/* 4. CAKE & CANDLE */
+.cake-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
 
-    .cat-letter {
-        width: 150px !important;
-        height: 150px !important;
-    }
+.container-cake {
+    width: 180px; 
+    height: 180px;
+    background-image: url('3d_icon__1_-removebg-preview.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative; /* This keeps the candle attached */
+}
 
-    /* Move text safely below the circle */
-    .instruction-text {
-        position: relative !important;
-        width: 200px !important;
-        text-align: center !important;
-        margin-top: 10px !important;
-        font-size: 0.9rem !important;
-    }
+.candle-container {
+    position: absolute;
+    top: -5px; /* Adjust this to move candle up/down */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.candle {
+    width: 8px;
+    height: 40px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+/* 5. THE THREE CIRCLES (FOOTER) */
+.allfooter-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Space between circles */
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.cat-link-wrapper, .beautiful, .image {
+    width: 140px !important;
+    height: 140px !important;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cat-letter, .image, .beautiful {
+    width: 140px !important;
+    height: 140px !important;
+    border-radius: 50% !important;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.instruction-text {
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #444;
 }
