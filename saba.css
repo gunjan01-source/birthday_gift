@@ -1,4 +1,4 @@
-       .bday-icon {
+.bday-icon {
     width: 150px; 
     height: 150px;
 }
@@ -464,6 +464,7 @@ body {
 }
 
 /* 1. LIMIT THE SCREEN & CENTER EVERYTHING */
+/* 1. THE FOUNDATION - FORCES EVERYTHING TO CENTER */
 body {
     background-color: rgb(255, 250, 229);
     margin: 0;
@@ -471,18 +472,17 @@ body {
     font-family: 'Comic Sans MS', cursive;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Horizontally centers all content */
-    width: 100%;
-    overflow-x: hidden; /* Prevents side-scrolling */
+    align-items: center; /* This is the magic button for centering */
+    text-align: center;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
-/* 2. LOADING PAGE FIX */
+/* 2. LOADING PAGE */
 #loading-page {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background-color: rgb(255, 250, 229);
     z-index: 9999;
     display: flex;
@@ -491,28 +491,23 @@ body {
     align-items: center;
 }
 
-.loader-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* 3. MAIN HEADING */
+/* 3. HEADING */
 h1 {
-    color: var(--dark-textbday);
+    color: #ff7293;
     font-size: 2.2em;
-    text-align: center;
-    margin: 40px auto 20px auto;
+    margin: 40px auto;
     width: 90%;
+    position: static !important; /* Removes laptop positioning */
 }
 
-/* 4. CAKE AREA (Centered) */
+/* 4. CAKE & CANDLE (CENTERED) */
 .cake-area {
-    width: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 0;
+    margin: 20px auto;
+    width: 100%;
 }
 
 .container-cake {
@@ -527,45 +522,47 @@ h1 {
 
 .candle-container {
     position: absolute;
-    top: 0;
+    top: -5px; /* Adjust this to move candle up/down */
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* 5. FOOTER CIRCLES (Centered and Limited) */
+/* 5. THE CIRCLES (NO MORE OVERLAPPING) */
 .allfooter-section {
-    width: 100%;
-    max-width: 400px; /* Limits the "screen" width */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px; /* Space between circles */
-    padding-bottom: 80px;
+    gap: 60px; /* Space between them */
+    margin-top: 50px;
+    padding-bottom: 100px;
+    width: 100%;
 }
 
+/* Force circles to stay circular and centered */
 .cat-link-wrapper, .beautiful, .image {
-    width: 150px !important;
-    height: 150px !important;
+    width: 140px !important;
+    height: 140px !important;
+    border-radius: 50% !important;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
-    position: relative;
+    background-color: rgba(255,255,255,0.3); /* Adds a soft glow */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .cat-letter, .image, .beautiful {
-    width: 150px !important;
-    height: 150px !important;
-    border-radius: 50% !important;
+    width: 100% !important;
+    height: 100% !important;
     background-size: cover;
     background-position: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 50% !important;
 }
 
 .instruction-text {
-    text-align: center;
-    width: 200px;
+    width: 250px;
     margin-top: 15px;
     font-size: 0.9rem;
-    color: #444;
+    color: #555;
 }
