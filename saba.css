@@ -117,28 +117,15 @@ h1:hover{
     z-index: 10;
 }
 
-/* --- THE DOLL --- */
-.hi-saying-doll {
-    width: 200px; /* Adjust size as needed */
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Centers it */
-}
-
-/* --- THE TULIP --- */
-/* If your tulip is an image, use this: */
-.tulip-image {
-    width: 100px;
-    height: auto;
-    display: block;
-    margin: 10px auto;
-}
-
-/* If the tulip was inside the cake or a specific spot: */
-.tulip-container {
+.tulip-box{
+    height: 17vh;
+    width: 15vh;
+    background-image: url('tulip-removebg-preview.png');
+    background-size: cover;
+    background-position: center;
     position: relative;
-    display: flex;
-    justify-content: center;
+    top: -25vh;
+    right: -150vh;
 }
 
 .cake-area {
@@ -454,5 +441,4 @@ h1:hover{
     border-radius: 20vh;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-
 
