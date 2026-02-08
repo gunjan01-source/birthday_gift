@@ -442,11 +442,7 @@ h1:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-/* 1. RESET & BASE */
-:root {
-    --dark-textbday: #ff7293;
-}
-/* 1. FORCE THE ENTIRE SCREEN TO CENTER */
+/* 1. THE LAYOUT ENGINE - FORCES EVERYTHING TO THE MIDDLE */
 body {
     background-color: rgb(255, 250, 229);
     margin: 0;
@@ -454,89 +450,94 @@ body {
     font-family: 'Comic Sans MS', cursive;
     display: flex;
     flex-direction: column;
-    align-items: center; /* This centers everything horizontally */
-    width: 100%;
+    align-items: center; /* Centers everything horizontally */
     min-height: 100vh;
+    width: 100vw;
     overflow-x: hidden;
 }
 
-/* 2. CENTER THE HEADING */
+/* 2. THE HEADING */
 h1 {
     color: #ff7293;
-    font-size: 2em;
+    font-size: 2.2em;
     text-align: center;
-    margin: 40px auto 20px auto;
+    margin: 40px 10px;
+    width: 90%;
+}
+
+/* 3. THE DOLL AND CAKE (The "Wrapper") */
+.cake-and-doll-wrapper {
+    display: flex;
+    flex-direction: column; /* Stacks them vertically on phone */
+    align-items: center;
+    gap: 20px;
     width: 100%;
 }
 
-/* 3. CENTER THE CAKE & CANDLE */
-.cake-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 40px;
+.hi-saying-doll {
+    width: 160px;
+    height: auto;
 }
 
 .container-cake {
     width: 200px;
-    height: 200px;
+    height: 220px;
     background-image: url('3d_icon__1_-removebg-preview.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
+    position: relative; /* Keeps candle attached */
 }
 
 .candle-container {
     position: absolute;
-    top: 5px; /* Adjust this to move candle up/down on the cake */
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* 4. CENTER THE FOOTER CIRCLES */
+/* 4. THE THREE CIRCLES (FOOTER) */
 .allfooter-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px; /* Space between each circle */
-    width: 100%;
+    gap: 60px; /* Space between circles */
+    margin-top: 40px;
     padding-bottom: 100px;
+    width: 100%;
 }
 
 .cat-link-wrapper, .beautiful, .image {
-    width: 150px !important;
-    height: 150px !important;
+    width: 150px;
+    height: 150px;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-decoration: none;
 }
 
 .cat-letter, .image, .beautiful {
-    width: 150px !important;
-    height: 150px !important;
-    border-radius: 50% !important;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     background-size: cover;
     background-position: center;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .instruction-text {
+    text-align: center;
+    width: 250px;
     margin-top: 15px;
     font-size: 0.9rem;
     color: #444;
-    text-align: center;
-    width: 250px;
 }
 
-/* 5. LOADING PAGE FIX */
+/* 5. THE LOADING PAGE */
 #loading-page {
     position: fixed;
     top: 0; left: 0;
-    width: 100vw; height: 100vh;
+    width: 100%; height: 100%;
     background-color: rgb(255, 250, 229);
     z-index: 9999;
     display: flex;
@@ -544,4 +545,3 @@ h1 {
     justify-content: center;
     align-items: center;
 }
-
