@@ -446,7 +446,7 @@ h1:hover{
 :root {
     --dark-textbday: #ff7293;
 }
-
+/* 1. FORCE THE ENTIRE SCREEN TO CENTER */
 body {
     background-color: rgb(255, 250, 229);
     margin: 0;
@@ -455,59 +455,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* This centers everything horizontally */
+    width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
-:root {
-    --dark-textbday: #ff7293;
-}
-
-/* 1. LIMIT THE SCREEN & CENTER EVERYTHING */
-/* 1. THE FOUNDATION - FORCES EVERYTHING TO CENTER */
-body {
-    background-color: rgb(255, 250, 229);
-    margin: 0;
-    padding: 0;
-    font-family: 'Comic Sans MS', cursive;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* This is the magic button for centering */
-    text-align: center;
-    width: 100vw;
-    overflow-x: hidden;
-}
-
-/* 2. LOADING PAGE */
-#loading-page {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgb(255, 250, 229);
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 3. HEADING */
+/* 2. CENTER THE HEADING */
 h1 {
     color: #ff7293;
-    font-size: 2.2em;
-    margin: 40px auto;
-    width: 90%;
-    position: static !important; /* Removes laptop positioning */
+    font-size: 2em;
+    text-align: center;
+    margin: 40px auto 20px auto;
+    width: 100%;
 }
 
-/* 4. CAKE & CANDLE (CENTERED) */
+/* 3. CENTER THE CAKE & CANDLE */
 .cake-area {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px auto;
+    justify-content: center;
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .container-cake {
@@ -522,47 +491,57 @@ h1 {
 
 .candle-container {
     position: absolute;
-    top: -5px; /* Adjust this to move candle up/down */
+    top: 5px; /* Adjust this to move candle up/down on the cake */
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* 5. THE CIRCLES (NO MORE OVERLAPPING) */
+/* 4. CENTER THE FOOTER CIRCLES */
 .allfooter-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px; /* Space between them */
-    margin-top: 50px;
-    padding-bottom: 100px;
+    gap: 60px; /* Space between each circle */
     width: 100%;
+    padding-bottom: 100px;
 }
 
-/* Force circles to stay circular and centered */
 .cat-link-wrapper, .beautiful, .image {
-    width: 140px !important;
-    height: 140px !important;
-    border-radius: 50% !important;
+    width: 150px !important;
+    height: 150px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-decoration: none;
-    background-color: rgba(255,255,255,0.3); /* Adds a soft glow */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .cat-letter, .image, .beautiful {
-    width: 100% !important;
-    height: 100% !important;
+    width: 150px !important;
+    height: 150px !important;
+    border-radius: 50% !important;
     background-size: cover;
     background-position: center;
-    border-radius: 50% !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .instruction-text {
-    width: 250px;
     margin-top: 15px;
     font-size: 0.9rem;
-    color: #555;
+    color: #444;
+    text-align: center;
+    width: 250px;
 }
+
+/* 5. LOADING PAGE FIX */
+#loading-page {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgb(255, 250, 229);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
